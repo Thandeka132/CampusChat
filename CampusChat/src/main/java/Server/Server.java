@@ -22,20 +22,20 @@ public class Server {
         this.scanner = new Scanner(System.in);
     }
 
-    public void startServer() throws IOException {
-
-        try {
-            Thread messageThread = new Thread(() -> serverMessageHandler());
-            messageThread.start();
-
-            while(true) {
-                Socket socket = serverSocket.accept();
-                System.out.println("A new user has connected!");
-                ClientHandler clientHandler = new ClientHandler(socket);
-                Thread thread = new Thread(clientHandler);
-                this.clientHandler = clientHandler;
-                thread.start();
-            }
-        }
-    }
+//    public void startServer() throws IOException {
+//
+//        try {
+//            Thread messageThread = new Thread(() -> serverMessageHandler());
+//            messageThread.start();
+//
+//            while(true) {
+//                Socket socket = serverSocket.accept();
+//                System.out.println("A new user has connected!");
+//                ClientHandler clientHandler = new ClientHandler(socket);
+//                Thread thread = new Thread(clientHandler);
+//                this.clientHandler = clientHandler;
+//                thread.start();
+//            }
+//        }
+//    }
 }
